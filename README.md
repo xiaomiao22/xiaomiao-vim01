@@ -30,22 +30,21 @@ $ mv xiaomiao-vim01/.vimrc ~/.vimrc
 $ vim
 :PluginInstall
 ```
-4. 编译ycm
+* 编译ycm
 ```
 $ cd ~/.vim/bundle/YouCompleteMe/
 $ git submodule update --init --recursive
 $ ./install.sh --clang-completer
 ```
-5. 验证
+* 验证
 编写c文件作简单验证
 ```
 $ vim test.c
 ```
 编写时查看是否有补全与语法检测
-```
+
 ```
 #include <stdio.h>
-```
 int main()
 {
 	int i;	/*这里是否有变量未使用的提示*/
@@ -54,5 +53,6 @@ int main()
 	return 0;
 }
 ```
+
 <h2 name="3">3 更多</h2>
 * 分享是快乐, 期待与你一起完善学习工作笔记, 我的邮箱: miaogx@yeah.net
