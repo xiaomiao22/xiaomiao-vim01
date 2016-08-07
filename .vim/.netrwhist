@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Project/manual_project/include'
+let g:netrw_dirhist_2='/Project/serial_helper/include'
+let g:netrw_dirhist_3='/home/miaoguoxiang/vim_study'
+let g:netrw_dirhist_4='/home/miaoguoxiang/.emacs.d'
+let g:netrw_dirhist_5='/home/miaoguoxiang/fafnir-src/Src'
