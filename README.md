@@ -14,18 +14,18 @@ miaogx@yeah.net
 <h2 name="2">2 安装</h2>
 我假定你已经安装好了vim, 然后安装的步骤如下:
 
-1. 首先备份你的旧的配置文件
+* 首先备份你的旧的配置文件
 ```
 $ cd ~
 $ mv .vimrc vimrc_old
 $ mv .vim vim_old
 ```
-2. 克隆此配置文件并将它放在正确的地方
+* 克隆此配置文件并将它放在正确的地方
 ```
 $ git clone https://github.com/xiaomiao22/xiaomiao-vim01.git
 $ mv xiaomiao-vim01/.vimrc ~/.vimrc 
 ```
-3. 打开vim进行插件的安装
+* 打开vim进行插件的安装
 ```
 $ vim
 :PluginInstall
@@ -43,8 +43,9 @@ $ vim test.c
 ```
 编写时查看是否有补全与语法检测
 ```
+```
 #include <stdio.h>
-
+```
 int main()
 {
 	int i;	/*这里是否有变量未使用的提示*/
