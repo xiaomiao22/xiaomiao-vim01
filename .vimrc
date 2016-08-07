@@ -8,6 +8,26 @@
 let g:man_os_platform="Linux" 
 let g:man_config_level = 3
 
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+	Plugin 'VundleVim/Vundle.vim'
+	Plugin 'tpope/vim-pathogen'
+	Plugin 'vim-scripts/taglist.vim'
+	Plugin 'vim-scripts/minibufexpl.vim'
+	Plugin 'xiaomiao22/winmanager'
+	Plugin 'xiaomiao22/vim-autocomplpop'
+	Plugin 'wesleyche/SrcExpl'
+	Plugin 'vim-scripts/ack.vim'
+	Plugin 'majutsushi/tagbar'
+	Plugin 'dyng/ctrlsf.vim'
+	Plugin 'scrooloose/syntastic'
+	Plugin 'scrooloose/nerdtree'
+	Plugin 'tomasr/molokai'
+	Plugin 'Valloric/YouCompleteMe'
+call vundle#end()
+filetype plugin indent on
+
 " Basic configure ui
 function Basic_config_ui()
 	"set nu
@@ -22,6 +42,7 @@ function Basic_config_ui()
 	set t_Co=256
 	colorscheme molokai
 endfunction
+
 
 " Basic configure tab 
 function Basic_config_tab()
@@ -314,10 +335,6 @@ function Man_exten_dev_c()
 	call Package_cscope()
 	call Package_ycm()
 endfunction
-
-" Myself manknow
-"call Myself_manknow()
-
 
 "
 " Now start execute configuration
