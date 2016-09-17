@@ -1,4 +1,4 @@
-<h1 align="center">vim开发环境配置文件-类型1 manknow</h1>
+<h1 align="center">vim开发环境配置文件-类型1 vim</h1>
 miaogx@yeah.net
 2016-08-07 20:15
 
@@ -20,11 +20,25 @@ $ cd ~
 $ mv .vimrc vimrc_old
 $ mv .vim vim_old
 ```
+* 可能的外部依赖程序, 你应该通过你的包管理系统进行安装
+```
+python
+clang
+llvm
+ctags
+cmake
+```
 * 克隆此配置文件并将它放在正确的地方
 ```
 $ git clone https://github.com/xiaomiao22/xiaomiao-vim01.git
 $ mv xiaomiao-vim01/.vimrc ~/.vimrc 
 ```
+* 安装插件管理插件
+```
+$ mkdir ~/.vim/bundle
+$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+
 * 打开vim进行插件的安装
 ```
 $ vim
