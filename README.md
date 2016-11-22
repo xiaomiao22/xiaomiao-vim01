@@ -76,33 +76,25 @@ int main()
 本配置文件进行了快捷键的定义, 汇总如下:
 
 * 关于视图相关的
-
+```
 <C-x>t   打开与关闭taglist
-
 <C-x>f   打开与关闭NERDTree
-
 <C-x>l   打开与关闭MiniBufExplorer
-
 <C-x>b   打开与关闭Tagbar
-
 <C-x>e   打开与关闭SrcExplToggle
-
 <C-x>o   打开quickfix window
-
 <C-x>c   关闭quickfix window
-
+```
 * 关于YCM相关的
-
+```
 <C-x>]
-
 <C-x>\
-
+```
 * 关于搜索相关的
-
+```
 <C-s>s   开始当前目录下面的文件搜索
-
 <C-s>f   开始指定目录下面的文件搜索
-
+```
 
 
 <h2 name="5">5 更多</h2>
