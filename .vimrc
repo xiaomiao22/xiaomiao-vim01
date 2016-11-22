@@ -1,6 +1,6 @@
 "
 "Author    : miaoguoxiang
-"Lastmod   : 2016.7.25
+"Lastmod   : 2016.11.22
 "Summary   : This is in $HOME configure for vim
 "
 
@@ -25,6 +25,10 @@ call vundle#begin()
 	Plugin 'scrooloose/nerdtree'
 	Plugin 'tomasr/molokai'
 	Plugin 'Valloric/YouCompleteMe'
+	Plugin 'vim-scripts/lookupfile'
+	Plugin 'vim-scripts/genutils'
+	Plugin 'xiaomiao22/manknow'
+	Plugin 'xiaomiao22/manlib'
 call vundle#end()
 filetype plugin indent on
 
@@ -166,6 +170,22 @@ function Package_srcexpl()
 	nmap <C-x>e :SrcExplToggle<CR>             
 endfunction
 
+" Package LookupFile
+function Package_lookupfile()
+	let g:LookupFile_MinPatLength = 2
+	let g:LookupFile_PreserveLastPattern = 0
+	let g:LookupFile_PreservePatternHistory = 1
+	let g:LookupFile_AlwaysAcceptFirst = 1
+	let g:LookupFile_AllowNewFiles = 0
+	"if filereadable("./filenametags")
+	"	let g:LookupFile_TagExpr = '"/home/miaoguoxiang/manlibs/tags"'
+	"endif
+	"nmap <silent> <leader>lk :LUTags<cr>
+	"nmap <silent> <leader>ll :LUBufs<cr>
+	"nmap <silent> <leader>lw :LUWalk<cr>
+endfunction
+
+
 " Package NERDTree
 function Package_nerdtree()
 	nmap <C-x>f :NERDTreeMirror<CR>
@@ -277,10 +297,17 @@ function Package_ycm()
 	nmap <C-x>\ :YcmCompleter GoToDefinition<CR>
 endfunction
 
+
 " Myself manknow
 function Myself_manknow()
-	let &rtp=&rtp . ',/home/miaoguoxiang/manknow/tools'
-	source /home/miaoguoxiang/manknow/manknow.vim
+	let &rtp=&rtp . ',/home/miaoguoxiang/manknow/manknow'
+	source /home/miaoguoxiang/.vim/bundle/manknow/pulgin/manknow.vim
+endfunction 
+
+" Myself manlib
+function Myself_manlib()
+	let g:manlib_path = "/home/miaoguoxiang/manlibs"
+	source /home/miaoguoxiang/.vim/bundle/manlib/pulgin/manlib.vim
 endfunction
 
 "
@@ -322,7 +349,10 @@ function Man_basic_dev_c()
 	call Package_minibufexplorer()
 	call Package_winmanager()
 	call Package_taglist()
+	call Package_lookupfile()
 	call Package_nerdtree()
+	call Myself_manknow()
+	call Myself_manlib()
 	call Package_omni_complete()
 	call Package_syntaxtic()
 endfunction
@@ -366,46 +396,6 @@ while 1==1
 endwhile
 
 
-" Section 7: Other technical information =====================================
-" 7.1 Custom shortcut list
-" +---------+-------------+--------------------------------+
-" |  class  |   option    |            describe            |
-" +---------+-------------+--------------------------------+ 
-" |         | <C-x>t      | open and close taglist         |
-" |         | <C-x>f      | open and close NERDTree        |
-" |  C-x    | <C-x>l      | open and close MiniBufExplorer |
-" |         | <C-x>b      | open and close Tagbar          |
-" |         | <C-x>e      | open and close SrcExplToggle   |
-" |         | <C-x>o      | open quickfix window           |
-" |         | <C-x>c      | close quickfix window          |
-" |         | <C-x>]      | ycm goto the Declaration       |
-" |         | <C-x>\      | ycm goto the Definition        |
-" +---------+-------------+--------------------------------+
-" |         | <C-s>s      | start current dir file search  |
-" |         | <C-s>f      | start Special dir file search  |
-" +---------+-------------+--------------------------------+
-" |  F      | F6          | quickfix cn                    |
-" |  F      | F7          | quickfix cp                    |
-" |         |             |                                |
-" +---------+-------------+--------------------------------+
-"
-"
-
-
-" Section 8: Project customization configure =================================
-" project 1. mdc6-fafnir -----------------------------------------------------
-
-"if filereadable("/home/miaoguoxiang/fafnir-src/fafnir-src.vim")
-"	source /home/miaoguoxiang/fafnir-src/fafnir-src.vim
-"endif
-
-
-" project 2. nginx -----------------------------------------------------------
-"if filereadable("/home/miaoguoxiang/project/nginx-1.0.14/nginx.vim")
-"	source /home/miaoguoxiang/project/nginx-1.0.14/nginx.vim
-"endif
-
-nmap <F2> GoDate: <Esc>:read !date<CR>kJ
-
+"nmap <F2> GoDate: <Esc>:read !date<CR>kJ
 
 
